@@ -1,0 +1,258 @@
+@import 'normalize.scss';
+@import 'base.scss';
+@function p2r($size) {
+    @return $size/75*1rem;
+}
+
+body {
+    // overflow-x: hidden;
+}
+
+//头部
+.head {
+    height: 44px;
+    width: 100%;
+    background-color: #e4393c;
+    display: flex;
+    padding: 0 5px;
+    align-content: space-between; // justify-content: 
+    .prev {
+        width: 50px;
+        padding: 0 0 0 5px;
+        a {
+            width: 100%;
+            height: 100%;
+            line-height: 50px;
+            display: inline-block;
+            i {
+                color: white;
+                font-size: 20px;
+            }
+        }
+    }
+    h2 {
+        font-size: 20px; // width: 100%;
+        height: 44px;
+        flex: 1;
+        text-align: center;
+        margin: 0;
+        line-height: 44px;
+        color: white;
+    }
+    .home {
+        width: 50px;
+        background: url('../images/header_app.png') no-repeat 0 0;
+        background-size: 32px;
+        background-position: center;
+        a {
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+        }
+    }
+}
+
+// 中间部分
+.content {
+    // display: flex;
+    #wrapp {
+        width: 100%;
+        overflow: hidden;
+    }
+    #ll {
+        width: 240% !important;
+        height: 36px;
+        overflow-x: hidden;
+        li {
+            width: 80px; // flex: 1;
+            height: 100%;
+            line-height: 36px;
+            a {
+                color: #000;
+            }
+        }
+        li.active>a,
+        .nav-tabs>li.active>a:hover,
+        .nav-tabs>li.active>a:focus {
+            border: 1px solid transparent;
+        }
+        li.active>a {
+            color: #e4393c;
+            border-bottom: 2px solid #e4393c;
+        }
+    }
+    #tab {
+        .tab-pane {
+            ul {
+                li {
+                    display: flex;
+                    .l {
+                        width: 130px;
+                        height: 130px;
+                        img {
+                            width: 100%;
+                            display: block;
+                            margin-top: 4px
+                        }
+                    }
+                    .r {
+                        flex: 1;
+                        padding-top: 5px;
+                        span {
+                            margin: 5px;
+                            font-weight: 400;
+                            min-height: 28px;
+                            max-height: 40px;
+                            line-height: 1.5;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+                        p {
+                            color: #fc353a;
+                            font-size: 18px;
+                            margin-top: 4px;
+                            i {
+                                font-style: normal;
+                                margin-right: 4px;
+                                font-size: 16px;
+                            }
+                            em {
+                                font-style: normal;
+                            }
+                            del {
+                                margin-left: 4px;
+                                font-size: 14px;
+                                color: #666;
+                            }
+                        }
+                        .bar {
+                            width: 100%;
+                            i {
+                                display: inline-block;
+                                width: 50%;
+                                height: 16px;
+                                text-align: center;
+                                border-radius: 10px;
+                                background-color: rgba(255, 255, 0, 0.5);
+                                position: relative;
+                                span {
+                                    color: #000;
+                                    font-style: normal;
+                                    z-index: 999;
+                                }
+                                &::before {
+                                    display: inline-block;
+                                    content: ''; // width: 10px;
+                                    height: 16px;
+                                    border-top-left-radius: 10px;
+                                    border-bottom-left-radius: 10px;
+                                    background-color: rgba(255, 0, 0, 0.7);
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 999;
+                                }
+                            }
+                            b {
+                                margin-left: 5px;
+                                color: hotpink;
+                            }
+                        }
+                        .tick {
+                            a {
+                                float: left;
+                                box-sizing: border-box;
+                                display: inline-block;
+                                width: 55%;
+                                margin-top: 5px;
+                            }
+                            a:nth-of-type(1) {
+                                color: #fc353a;
+                                height: 20px;
+                                overflow: hidden;
+                                line-height: 20px;
+                                margin-left: 5px;
+                                text-align: center;
+                                border: 1px dashed #fc353a;
+                                font-size: 12px;
+                            }
+                            a:nth-of-type(2) {
+                                float: right;
+                                width: 30%;
+                                margin-right: 10px;
+                                height: 20px;
+                                border-radius: 10px;
+                                background-color: #fc353a;
+                                color: white;
+                                text-align: center;
+                                line-height: 20px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 底部
+.foot {
+    width: 100%;
+    height: 96px;
+    background-color: #ccc;
+    .f_nav {
+        display: flex;
+        height: 34px;
+        line-height: 34px;
+        justify-content: space-between;
+        align-content: space-between;
+        border-bottom: 1px solid #999;
+        a {
+            flex: 1;
+            text-align: center;
+            font-size: 14px;
+            color: black;
+            border-right: 1px solid #999;
+        }
+    }
+    .f_text {
+        height: 62px;
+        padding: 20px 0 0;
+        p {
+            width: 100%;
+            margin-bottom: 3px;
+            text-align: center;
+            font-size: 14px;
+            a {
+                font-size: 14px;
+                color: #999;
+            }
+        }
+    }
+}
+
+// 回到顶部的箭头
+.rock {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #666;
+    line-height: 30px;
+    text-align: center;
+    a {
+        width: 100%;
+        display: block;
+        color: whitesmoke;
+    }
+    a:hover,
+    a:visited {
+        color: whitesmoke;
+        text-decoration: none
+    }
+}
